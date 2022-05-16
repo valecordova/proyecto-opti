@@ -13,6 +13,12 @@ def create_subtitle(pdf, section):
     pdf.ln(10)
 
 
+def create_subsubtitle(pdf, subsection):
+    pdf.set_font('Arial', 'B', 14)
+    pdf.write(5, f"{subsection}")
+    pdf.ln(10)
+
+
 def create_report(filename):
     pdf = FPDF(format='Letter')
 
@@ -24,6 +30,12 @@ def create_report(filename):
     pdf.add_page()
     section1 = "1. Manejo de Soluciones"
     create_subtitle(pdf, section1)
+    '''Seccion 1.1 Valor Objetivo'''
+    subsection1 = "1.1 Valor Objetivo"
+    create_subsubtitle(pdf, subsection1)
+    '''Seccion 1.2 Soluciones'''
+    subsection2 = "1.2 Soluciones"
+    create_subsubtitle(pdf, subsection2)
     # Incluir graficos
 
     '''Seccion 2 Restricciones Activas'''
