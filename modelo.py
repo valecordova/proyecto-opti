@@ -1,7 +1,7 @@
-from gurobipy import GRB, Model
+from gurobipy import GRB, Model, quicksum
 from datos import (meses, horas, dias, comunas, companias,
                    demanda_basica, demanda_critica,
-                   compania_abastece_comuna)
+                   compania_abastece_comuna, comuna_compania)
 
 '''Definicion de data'''
 I = companias
@@ -22,20 +22,29 @@ f = compania_abastece_comuna
 model = Model()
 
 '''Creacion de variables de decision'''
-x = m.addVars(T, J, M, N, vtype=GRB.INTEGER, name="x_tjmn")
-y = m.addVars(I, J, M, vtype=GRB.BINARY, name="y_ijm")
-k = m.addVars(I, M, vtype=GRB.INTEGER, name="k_im")
-h = m.addVars(I, J, T, M, vtype=GRB.INTEGER, name="h_ijtm")
+x = model.addVars(T, J, M, N, vtype=GRB.INTEGER, name="x_tjmn")
+y = model.addVars(J, I, M, vtype=GRB.BINARY, name="y_ijm")
+k = model.addVars(I, M, vtype=GRB.INTEGER, name="k_im")
+h = model.addVars(J, I, T, M, vtype=GRB.INTEGER, name="h_ijtm")
 
 '''Agregar las variable'''
 model.update()
 
 '''Restricciones'''
-model.addConstrs()
+# Cortes de agua
+# Demandas y capacidades
+model.addConstrs((h[j, i, t, m] >= (db[j, i, t] * (1 - y[j, i, m]))
+                 for j, i in comuna_compania for t in T for m in M),
+                 name="r3")
+
+model.addConstrs((h[j, i, t, m] >= (dc[j, i, t] * y[j, i, m])
+                 for j, i in comuna_compania for t in T for m in M),
+                 name="r4")
+
 
 '''Funcion Objetivo'''
-objetivo = []
-model.setObjectiva(objetivo, GRB.MAXIMIZE)
+objetivo = quicksum(h[j, i, t, m] for i in I for j in J for t in T for m in M)
+model.setObjective(objetivo, GRB.MINIMIZE)
 
 '''Optimizacion del problema'''
 model.optimize()

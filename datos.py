@@ -32,12 +32,12 @@ for dia in dias:
         zip(zip(df.comuna, df.compania, dia_n), df.demanda_critica_comuna)))
     demanda_critica.update(demanda_en_dia_n)
 
-compania_comuna = list(zip(df.comuna, df.compania))
+comuna_compania = list(zip(df.comuna, df.compania))
 
 compania_abastece_comuna = dict()
 for compania in companias:
     for comuna in comunas:
-        if (comuna, compania) in compania_comuna:
+        if (comuna, compania) in comuna_compania:
             compania_abastece_comuna[(comuna, compania)] = 1
         else:
             compania_abastece_comuna[(comuna, compania)] = 0
