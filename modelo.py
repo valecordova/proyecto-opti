@@ -1,7 +1,8 @@
 from gurobipy import GRB, Model, quicksum
 from datos import (meses, horas, dias, comunas, companias,
                    demanda_basica, demanda_critica,
-                   compania_abastece_comuna, comuna_compania)
+                   compania_abastece_comuna, comuna_compania,
+                   meses_sin_uno)
 
 '''Definicion de data'''
 I = companias
@@ -9,7 +10,7 @@ J = comunas
 M = meses
 N = horas
 T = dias
-
+N_1 = meses_sin_uno
 '''Definir valores de parametros'''
 # Este es un diccionario al que se accede con la llave (comuna, compania, dia)
 db = demanda_basica
@@ -22,7 +23,7 @@ f = compania_abastece_comuna
 model = Model()
 
 '''Creacion de variables de decision'''
-x = model.addVars(T, J, M, N, vtype=GRB.INTEGER, name="x_tjmn")
+x = model.addVars(T, J, M, N, vtype=GRB.BINARY, name="x_tjmn")
 y = model.addVars(J, I, M, vtype=GRB.BINARY, name="y_ijm")
 k = model.addVars(I, M, vtype=GRB.INTEGER, name="k_im")
 h = model.addVars(J, I, T, M, vtype=GRB.INTEGER, name="h_ijtm")
@@ -32,6 +33,10 @@ model.update()
 
 '''Restricciones'''
 # Cortes de agua
+model.addConstrs((quicksum(x[t, j, m, n]
+                 for n in N) <= 4 for j in J for t in T for m in M), name="r1")
+model.addConstrs((((x[j, t, m, n] + x[j, t, m, (n+1)]) <= 1)
+                  for j in J for t in T for m in M for n in N_1), name="r2")
 # Demandas y capacidades
 model.addConstrs((h[j, i, t, m] >= (db[j, i, t] * (1 - y[j, i, m]))
                  for j, i in comuna_compania for t in T for m in M),

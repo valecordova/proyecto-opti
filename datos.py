@@ -8,6 +8,8 @@ df = pd.read_csv('data.csv', sep=';', header=0,
 
 meses = list(range(1, 13))
 
+meses_sin_uno = list(range(1, 12))
+
 horas = list(range(1, 25))
 
 dias = list(range(1, 31))
