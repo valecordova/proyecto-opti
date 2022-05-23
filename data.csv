@@ -1,53 +1,53 @@
-﻿n°;Comuna;Provincia ;Población ;Compañía;Demanda crítica comunal mensual [m^3];Consumo actual por persona (m^3);Consumo actual comunal al mes [m3];Demanda básica (opcion1);Demanda Básica (opción2)
-1;Maipú;Santiago;467861;SMAPA;1403583;20,33;9511614;4054016;2105375
-2;Santiago;Santiago;214159;Aguas Andinas;642477;12,94;2771217;1064370;963716
-3;La Florida;Santiago;364602;Aguas Andinas;1093806;19,21;7004004;2955099;1640709
-4;Las condes;Santiago;246474;Aguas Andinas;739422;24,9;6137203;2698890;1109133
-5;Peñalolén;Santiago;216040;Aguas Andinas;648120;27,12;5859005;2605442;972180
-6;Pudahuel;Santiago;195185;Aguas Andinas;585555;22,64;4418988;1916717;878333
-7;Quilicura;Santiago;126326;Aguas Andinas;378978;22,89;2891602;1256312;568467
-8;Ñuñoa;Santiago;162481;Aguas Andinas;487443;14,95;2429091;970824;731165
-9;La Pintana;Santiago;190270;Aguas Andinas;570810;17,05;3244104;1336647;856215
-10;El Bosque;Santiago;175212;Aguas Andinas;525636;17,8;3118774;1296569;788454
-11;Recoleta;Santiago;147279;Aguas Andinas;441837;19,08;2810083;1184123;662756
-12;Renca;Santiago;133513;Aguas Andinas;400539;20,55;2743692;1171577;600809
-13;Estación Central;Santiago;126066;Aguas Andinas;378198;15,25;1922507;772154;567297
-14;Providencia;Santiago;117020;Aguas Andinas;351060;17,26;2019765;834353;526590
-15;Cerro Navia;Santiago;148454;Aguas Andinas;445362;19,26;2859224;1206931;668043
-16;Conchalí;Santiago;132831;Aguas Andinas;398493;19,86;2638024;1119765;597740
-17;La Granja ;Santiago;132832;Aguas Andinas;398496;18,63;2474660;1038082;597744
-18;Macul ;Santiago;111914;Aguas Andinas;335742;17,47;1955138;809698;503613
-19;Quinta Normal;Santiago;103767;Aguas Andinas;311301;17,84;1851203;769951;466952
-20;San Miguel ;Santiago;77914;Aguas Andinas;233742;15,11;1177281;471769;350613
-21;Lo Barnechea;Santiago;73931;Aguas Andinas;221793;51,44;3803011;1790609;332690
-22;Pedro Aguirre Cerda;Santiago;114400;Aguas Andinas;343200;19,29;2206776;931788;514800
-23;Independencia;Santiago;64513;Aguas Andinas;193539;16,04;1034789;420625;290309
-24;Lo Espejo;Santiago;113039;Aguas Andinas;339117;19,87;2246085;953484;508676
-25;Huechuraba;Santiago;73941;Aguas Andinas;221823;30,15;2229321;1003749;332735
-26;Lo Prado;Santiago;104411;Aguas Andinas;313233;18,4;1921162;803965;469850
-27;San Joaquín ;Santiago;96539;Aguas Andinas;289617;19,62;1894095;802239;434426
-28;La Reina;Santiago;96434;Aguas Andinas;289302;30,64;2954738;1332718;433953
-29;La Cisterna;Santiago;85030;Aguas Andinas;255090;15,58;1324767;534839;382635
-30;Vitacura;Santiago;80389;Aguas Andinas;241167;32,58;2619074;1188953;361751
-31;San Ramón;Santiago;94619;Aguas Andinas;283857;21,21;2006869;861506;425786
-32;Cerrillos;Santiago;71602;SMAPA;214806;27,63;1978363;881779;322209
-33;Puente alto;Cordillera ;491222;Aguas Andinas;1473666;19,03;9347955;3937144;2210499
-34;Pirque;Cordillera ;16448;Aguas Andinas;49344;63,56;1045435;498045;74016
-35;San josé de Maipo;Cordillera ;12822;Aguas Andinas;38466;37,65;482748;222141;57699
-36;San bernardo;Maipo;246865;Aguas Andinas;740595;22,11;5458185;2358795;1110893
-37;Buin;Maipo;62986;Aguas Andinas;188958;22,77;1434191;622617;283437
-38;Paine;Maipo;49498;Aguas Andinas;148494;23,16;1146374;498940;222741
-39;Calera de Tango;Maipo;18138;Aguas Andinas;54414;49,09;890394;417990;81621
-40;Colina;Chacabuco;76714;Aguas Andinas;230142;39,16;3004120;1386989;345213
-41;Lampa;Chacabuco;40074;Aguas Andinas;120222;24,76;992232;436005;180333
-42;Tiltil;Chacabuco;14603;Aguas Andinas;43809;22,81;333094;144643;65714
-43;Melipilla;Melipilla;93850;Aguas Andinas;281550;17,06;1601081;659766;422325
-44;Curacaví;Melipilla;24044;Aguas Andinas;72132;19,2;461645;194756;108198
-45;María Pinto;Melipilla;10261;Agua Potable Rural (Pozos);30783;0;0;0;46175
-46;San Pedro ;Melipilla;8069;Agua Potable Rural (Pozos);24207;0;0;0;36311
-47;Alhué;Melipilla;4389;Agua Potable Rural (Pozos);13167;0;0;0;19751
-48;Peñaflor;Talagante ;66508;Aguas Andinas;199524;19,28;1282274;541375;299286
-49;Talagante;Talagante ;59549;Aguas Andinas;178647;20,07;1195148;508251;267971
-50;Padre Hurtado ;Talagante ;38517;Aguas Andinas;115551;19,18;738756;311603;173327
-51;Isla de Maipo ;Talagante ;25638;Aguas Andinas;76914;23,12;592751;257918;115371
-52;El monte ;Talagante ;26577;Aguas Andinas;79731;17,85;474399;197334;119597
+﻿n°;Comuna;Provincia ;Población ;Compañía;Demanda crítica comunal diaria [m^3];Consumo actual por persona (m^3);Consumo actual comunal diaria [m3];Demanda básica diaria(opcion1);Demanda Básica (opción2)
+1;Maipú;Santiago;467861;SMAPA;46786,1;20,33;317054;135134;2105375
+2;Santiago ;Santiago;214159;Aguas Andinas;21415,9;12,94;92374;35479;963716
+3;La Florida;Santiago;364602;Aguas Andinas;36460,2;19,21;233467;98503;1640709
+4;Las condes;Santiago;246474;Aguas Andinas;24647,4;24,9;204573;89963;1109133
+5;Peñalolén ;Santiago;216040;Aguas Andinas;21604;27,12;195300;86848;972180
+6;Pudahuel ;Santiago;195185;Aguas Andinas;19518,5;22,64;147300;63891;878333
+7;Quilicura;Santiago;126326;Aguas Andinas;12632,6;22,89;96387;41877;568467
+8;Ñuñoa;Santiago;162481;Aguas Andinas;16248,1;14,95;80970;32361;731165
+9;La Pintana;Santiago;190270;Aguas Andinas;19027;17,05;108137;44555;856215
+10;El Bosque;Santiago;175212;Aguas Andinas;17521,2;17,8;103959;43219;788454
+11;Recoleta;Santiago;147279;Aguas Andinas;14727,9;19,08;93669;39471;662756
+12;Renca;Santiago;133513;Aguas Andinas;13351,3;20,55;91456;39053;600809
+13;Estación Central;Santiago;126066;Aguas Andinas;12606,6;15,25;64084;25738;567297
+14;Providencia ;Santiago;117020;Aguas Andinas;11702;17,26;67326;27812;526590
+15;Cerro Navia;Santiago;148454;Aguas Andinas;14845,4;19,26;95307;40231;668043
+16;Conchalí;Santiago;132831;Aguas Andinas;13283,1;19,86;87934;37326;597740
+17;La Granja ;Santiago;132832;Aguas Andinas;13283,2;18,63;82489;34603;597744
+18;Macul ;Santiago;111914;Aguas Andinas;11191,4;17,47;65171;26990;503613
+19;Quinta Normal;Santiago;103767;Aguas Andinas;10376,7;17,84;61707;25665;466952
+20;San Miguel ;Santiago;77914;Aguas Andinas;7791,4;15,11;39243;15726;350613
+21;Lo Barnechea;Santiago;73931;Aguas Andinas;7393,1;51,44;126767;59687;332690
+22;Pedro Aguirre Cerda;Santiago;114400;Aguas Andinas;11440;19,29;73559;31060;514800
+23;Independencia;Santiago;64513;Aguas Andinas;6451,3;16,04;34493;14021;290309
+24;Lo Espejo;Santiago;113039;Aguas Andinas;11303,9;19,87;74869;31783;508676
+25;Huechuraba;Santiago;73941;Aguas Andinas;7394,1;30,15;74311;33458;332735
+26;Lo Prado;Santiago;104411;Aguas Andinas;10441,1;18,4;64039;26799;469850
+27;San Joaquín ;Santiago;96539;Aguas Andinas;9653,9;19,62;63137;26741;434426
+28;La Reina;Santiago;96434;Aguas Andinas;9643,4;30,64;98491;44424;433953
+29;La Cisterna;Santiago;85030;Aguas Andinas;8503;15,58;44159;17828;382635
+30;Vitacura;Santiago;80389;Aguas Andinas;8038,9;32,58;87302;39632;361751
+31;San Ramón;Santiago;94619;Aguas Andinas;9461,9;21,21;66896;28717;425786
+32;Cerrillos;Santiago;71602;SMAPA;7160,2;27,63;65945;29393;322209
+33;Puente alto;Cordillera ;491222;Aguas Andinas;49122,2;19,03;311598;131238;2210499
+34;Pirque;Cordillera ;16448;Aguas Andinas;1644,8;63,56;34848;16602;74016
+35;San josé de Maipo;Cordillera ;12822;Aguas Andinas;1282,2;37,65;16092;7405;57699
+36;San bernardo;Maipo;246865;Aguas Andinas;24686,5;22,11;181940;78627;1110893
+37;Buin;Maipo;62986;Aguas Andinas;6298,6;22,77;47806;20754;283437
+38;Paine;Maipo;49498;Aguas Andinas;4949,8;23,16;38212;16631;222741
+39;Calera de Tango;Maipo;18138;Aguas Andinas;1813,8;49,09;29680;13933;81621
+40;Colina;Chacabuco;76714;Aguas Andinas;7671,4;39,16;100137;46233;345213
+41;Lampa;Chacabuco;40074;Aguas Andinas;4007,4;24,76;33074;14534;180333
+42;Tiltil;Chacabuco;14603;Aguas Andinas;1460,3;22,81;11103;4821;65714
+43;Melipilla;Melipilla;93850;Aguas Andinas;9385;17,06;53369;21992;422325
+44;Curacaví;Melipilla;24044;Aguas Andinas;2404,4;19,2;15388;6492;108198
+45;María Pinto;Melipilla;10261;Agua Potable Rural (Pozos);1026,1;;0;0;46175
+46;San Pedro ;Melipilla;8069;Agua Potable Rural (Pozos);806,9;;0;0;36311
+47;Alhué;Melipilla;4389;Agua Potable Rural (Pozos);438,9;;0;0;19751
+48;Peñaflor;Talagante ;66508;Aguas Andinas;6650,8;19,28;42742;18046;299286
+49;Talagante;Talagante ;59549;Aguas Andinas;5954,9;20,07;39838;16942;267971
+50;Padre Hurtado ;Talagante ;38517;Aguas Andinas;3851,7;19,18;24625;10387;173327
+51;Isla de Maipo ;Talagante ;25638;Aguas Andinas;2563,8;23,12;19758;8597;115371
+52;El monte ;Talagante ;26577;Aguas Andinas;2657,7;17,85;15813;6578;119597
