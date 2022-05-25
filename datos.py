@@ -4,7 +4,7 @@ df = pd.read_csv('data.csv', sep=';', header=0,
                  names=['numero', 'comuna', 'provincia', 'poblacion',
                         'compania', 'demanda_critica_comuna',
                         'consumo_actual_persona', 'consumo_actual_mes',
-                        'demanda_basica1', 'demanda_basica2'])
+                        'demanda_basica', 'demanda_basica2'])
 
 meses = list(range(1, 13))
 
@@ -21,18 +21,24 @@ companias = []
 [companias.append(x) for x in df.compania.tolist() if x not in companias]
 
 demanda_basica = dict()
-for dia in dias:
-    dia_n = [dia] * len(df.comuna)
-    demanda_en_dia_n = dict(list(
-        zip(zip(df.comuna, df.compania, dia_n), df.demanda_basica1)))
-    demanda_basica.update(demanda_en_dia_n)
+for mes in meses:
+    mes_n = [mes] * len(comunas)
+    for dia in dias:
+        dia_n = [dia] * len(comunas)
+        demanda_en_dia_n = dict(list(
+            zip(zip(df.comuna, df.compania, dia_n, mes_n),
+                df.demanda_basica)))
+        demanda_basica.update(demanda_en_dia_n)
 
 demanda_critica = dict()
-for dia in dias:
-    dia_n = [dia] * len(df.comuna)
-    demanda_en_dia_n = dict(list(
-        zip(zip(df.comuna, df.compania, dia_n), df.demanda_critica_comuna)))
-    demanda_critica.update(demanda_en_dia_n)
+for mes in meses:
+    mes_n = [mes] * len(comunas)
+    for dia in dias:
+        dia_n = [dia] * len(comunas)
+        demanda_en_dia_n = dict(list(
+            zip(zip(df.comuna, df.compania, dia_n, mes_n),
+                df.demanda_critica_comuna)))
+        demanda_critica.update(demanda_en_dia_n)
 
 comuna_compania = list(zip(df.comuna, df.compania))
 

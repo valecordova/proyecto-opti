@@ -43,4 +43,12 @@ def create_report(filename):
     section2 = "2. Restricciones Activas"
     create_subtitle(pdf, section2)
 
+    '''Seccion 3 Graficos'''
+    pdf.add_page()
+    section3 = "3. Gráficos"
+    create_subtitle(pdf, section3)
+    pdf.image('graficos/comuna_demanda_basica.png', w=150)
+    pdf.image('graficos/comuna_demanda_critica.png', w=150)
+    pdf.image('graficos/comuna_poblacion.png', w=150)
+
     pdf.output(filename, 'F')
