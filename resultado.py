@@ -19,12 +19,26 @@ def create_subsubtitle(pdf, subsection):
     pdf.ln(10)
 
 
+def create_names(pdf, subsection):
+    pdf.set_font('Arial', 'I', 12)
+    pdf.write(5, f"{subsection}")
+    pdf.ln(10)
+
+
+def values(pdf, subsection):
+    pdf.set_font('Arial', '', 12)
+    pdf.write(5, f"{subsection}")
+    pdf.ln(5)
+
+
 def create_report(filename):
     pdf = FPDF(format='Letter')
 
     '''Titulo'''
     pdf.add_page()
     create_title(pdf)
+    names = 'David Alejandro Boyd Rodríguez sección 2\nMaría Francisca Carrasco Polanco sección 3\nAlicia Valentina Córdova Véliz sección 4\nMaría Clara Pinto Chadwick sección alumno 4\nJoaquín Alejandro Tapia Troncoso sección 4\nNicole Valeria Valenzuela Castillo sección 4'
+    create_names(pdf, names)
 
     '''Seccion 1 Manejo de Soluciones'''
     pdf.add_page()
