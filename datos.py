@@ -25,23 +25,19 @@ for mes in meses:
     mes_n = [mes] * len(comunas)
     for dia in dias:
         dia_n = [dia] * len(comunas)
-        for hora in horas:
-            hora_n = [hora] * len(comunas)
-            demanda_en_dia_n = dict(list(
-                zip(zip(df.comuna, df.compania, dia_n, mes_n, hora_n),
-                    df.demanda_basica)))
-            demanda_basica.update(demanda_en_dia_n)
+        demanda_en_dia_n = dict(list(
+            zip(zip(df.comuna, df.compania, dia_n, mes_n),
+                df.demanda_basica)))
+        demanda_basica.update(demanda_en_dia_n)
 
 demanda_critica = dict()
 for mes in meses:
     mes_n = [mes] * len(comunas)
     for dia in dias:
         dia_n = [dia] * len(comunas)
-        for hora in horas:
-            hora_n = [hora] * len(comunas)
-            demanda_en_dia_n = dict(list(
-                zip(zip(df.comuna, df.compania, dia_n, mes_n, hora_n),
-                    df.demanda_critica_comuna)))
+        demanda_en_dia_n = dict(list(
+            zip(zip(df.comuna, df.compania, dia_n, mes_n),
+                df.demanda_critica_comuna)))
         demanda_critica.update(demanda_en_dia_n)
 
 comuna_compania = list(zip(df.comuna, df.compania))
@@ -53,3 +49,10 @@ for compania in companias:
             compania_abastece_comuna[(comuna, compania)] = 1
         else:
             compania_abastece_comuna[(comuna, compania)] = 0
+
+'''
+for key in demanda_basica.keys():
+    if key[0] == 'Santiago ' or key[0] == 'Santiago':
+        print(key)
+
+# '''

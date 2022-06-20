@@ -6,5 +6,5 @@ from modelo import resolver_problema
 if __name__ == '__main__':
     filename = "reporte_grupo_56.pdf"
     resolver_problema()
-    graficar()
-    create_report(filename)
+    # graficar()
+    # create_report(filename)

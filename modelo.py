@@ -1,5 +1,5 @@
 from gurobipy import GRB, Model, quicksum
-from sympy import sqrt
+from math import sqrt as msqrt
 from datos_caudal import agua_compania
 from datos import (meses, horas, dias, comunas, companias,
                    demanda_basica, demanda_critica,
@@ -13,7 +13,7 @@ N = horas
 T = dias
 N_1 = meses_sin_uno
 MG = 10 ** 10
-M_ = 13
+M_ = 12
 
 '''Definir valores de parametros'''
 # Este es un diccionario al que se accede con la llave (comuna, compania, dia)
@@ -40,12 +40,12 @@ model.update()
 '''Restricciones'''
 
 model.addConstrs((x[j, i, t, 1, n] <=
-                 ((quicksum(dc[j, i, t, 1, n] for j in J for t in T)
+                 ((quicksum(dc[j, i, t, 1] for j in J for t in T)
                    )/(c[i, 1])) for j in J for i in I for t in T for n in N), name="r1")
 
 model.addConstrs((x[j, i, t, m, n] <=
-                  ((quicksum(dc[j, i, t, m, n] for j in J for t in T)
-                    )/(c[i, m])) for j in J for i in I for t in T for m in range(2, M_ + 1)
+                  ((quicksum(dc[j, i, t, m] for j in J for t in T)
+                    )/(c[i, m])) for j in J for i in I for t in T for m in range(2, M_)  # Aqui si se pone de 2 hasta 13 no funciona porque no hay un mes 13 en el diccionario, para la parte de arriba de la fraccion
                   for n in N), name="r2")
 
 model.addConstrs((quicksum(x[j, i, t, m, n]
@@ -60,33 +60,30 @@ model.addConstrs((h[j, i, t, m, n] <= (1 - x[j, i, t, m, n])*MG
                   for j in J for i in I for t in T for m in M for n in N),
                  name="r5")
 
+model.addConstrs((y[j, i, m] >= (1 - (quicksum(quicksum(db[j, i, t, m]
+                 for t in T) for j in J)/c[i, m])) for j in J for i in I for m in M), name="r6")
 
-model.addConstrs((y[j, i, m] <= (1 + ((db[j, i, t, m] - c[i, m]) /
-                                      (db[j, i, t, m] - c[i, m])))
-                  for j in J for i in I for t in T for m in M), name="r6")
-
-model.addConstrs((y[j, i, m] >= (db[j, i, t, m] - c[i, m]) /
-                  (sqrt((db[j, i, t, m]) ** 2+(c[i, m]) ** 2))
-                  for j in J for i in I for t in T for m in M), name="r7")
+model.addConstrs((y[j, i, m] <= (quicksum(quicksum(db[j, i, t, m] for t in T)
+                 for j in J)/c[i, m])for j in J for i in I for m in M), name="r7")
 
 model.addConstrs((quicksum(h[j, i, t, m, n] for n in N) >= (
     db[j, i, t, m]*(1 - y[j, i, m]))
-    for j in J for i in I for t in T for m in M), name="r8")
+    for j in J for i in I for t in T for m in M for n in N), name="r8")
 
 model.addConstrs((quicksum(h[j, i, t, m, n] for n in N) >= (
-    dc[j, i, t, m, n]*y[j, i, m]) for j in J for i in I
-    for t in T for m in M), name="r9")
+    dc[j, i, t, m]*y[j, i, m]) for j in J for i in I
+    for t in T for m in M for n in N), name="r9")
 
 model.addConstrs((quicksum(h[j, i, t, 1, n] for n in N for t in T for j in J)
                   <= (c[i, 1]) for i in I), name="r10")
 
 model.addConstrs((quicksum(h[j, i, t, m, n] for n in N for t in T for j in J)
-                  <= (c[i, m] + k[i, m - 1]) for i in I for m in range(2, M_ + 1)), name="r11")
+                  <= (c[i, m] + k[i, m - 1]) for i in I for m in range(2, M_)), name="r11")
 
 model.addConstrs((k[i, m] == k[i, m - 1] + c[i, m] -
                   quicksum(h[j, i, t, m, n]
                            for n in N for t in T for j in J)
-                  for i in I for m in range(2, M_ + 1)), name="r12")
+                  for i in I for m in range(2, M_)), name="r12")
 
 '''Funcion Objetivo'''
 objetivo = quicksum(h[j, i, t, m, n]
