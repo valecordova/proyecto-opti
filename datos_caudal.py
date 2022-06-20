@@ -12,4 +12,6 @@ for mes in meses:
     for compania in companias:
         caudal_por_compania = df.loc[df['compania']
                                      == compania, 'caudal'].sum()
-        agua_compania[compania, mes] = caudal_por_compania
+        agua_compania[compania, mes] = caudal_por_compania * 24 * 3600 * mes
+
+print(agua_compania)
