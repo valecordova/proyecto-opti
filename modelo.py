@@ -13,7 +13,7 @@ N = horas
 T = dias
 N_1 = meses_sin_uno
 MG = 10 ** 10
-M_ = 12
+M_ = 13
 
 '''Definir valores de parametros'''
 # Este es un diccionario al que se accede con la llave (comuna, compania, dia)
@@ -87,7 +87,7 @@ model.addConstrs((k[i, m] == k[i, m - 1] + c[i, m] -
 
 '''Funcion Objetivo'''
 objetivo = quicksum(h[j, i, t, m, n]
-                    for i in I for j in J for t in T for m in M for n in M)
+                    for i in I for j in J for t in T for m in M for n in N)
 model.setObjective(objetivo, GRB.MINIMIZE)
 
 
